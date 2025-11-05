@@ -66,3 +66,13 @@ echo $SG_ID
 
 ### Habilitar la asginación de IPv4 Pública en la subred
 aws ec2 modify-subnet-attribute --subnet-id $SUB_ID --map-public-ip-on-launch 
+
+aws ec2 run-instances \
+    --image-id ami-0ecb62995f68bb549 \
+    --instance-type t3.micro \
+    --subnet-id $SUB_ID \
+    --security-group-ids $SG_ID \
+    --associate-public-ip-address \
+    --count 1 \
+    --key-name vockey \
+    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=Hector-Instance}]'
