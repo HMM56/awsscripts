@@ -80,5 +80,7 @@ EC2_ID=$(aws ec2 run-instances \
 
 sleep 10m
 
+echo $EC2_ID
+
 # En caso de NO indicar el grupo de seguridad se haría de la siguiente manera:
 # aws ec2 modify-instance-attribute --instance-id $EC2_ID --groups $SG_ID
