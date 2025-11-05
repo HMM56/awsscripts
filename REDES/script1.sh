@@ -67,7 +67,7 @@ echo $SG_ID
 ### Habilitar la asginación de IPv4 Pública en la subred
 aws ec2 modify-subnet-attribute --subnet-id $SUB_ID --map-public-ip-on-launch 
 
-aws ec2 run-instances \
+EC2_ID=$(aws ec2 run-instances \
     --image-id ami-0ecb62995f68bb549 \
     --instance-type t3.micro \
     --subnet-id $SUB_ID \
@@ -75,4 +75,10 @@ aws ec2 run-instances \
     --associate-public-ip-address \
     --count 1 \
     --key-name vockey \
-    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=Hector-Instance}]'
+    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=Hector-Instance}]' \
+    --query Instances.InstanceId --output text)
+
+sleep 10m
+
+# En caso de NO indicar el grupo de seguridad se haría de la siguiente manera:
+# aws ec2 modify-instance-attribute --instance-id $EC2_ID --groups $SG_ID
