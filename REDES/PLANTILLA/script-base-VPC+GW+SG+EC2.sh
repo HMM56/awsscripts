@@ -53,7 +53,7 @@ clear
     ###     IMPRESIÓN DEL ID     ###
     ################################
     echo "-------------------------------------------------------------"
-    echo "La ID de la puerta de enlace es :" $GW_ID
+    echo "• La ID de la puerta de enlace es :" $GW_ID
 
 #####################################
 ####                             ####
@@ -114,7 +114,7 @@ clear
     ###     IMPRESIÓN DEL ID     ###
     ################################
     echo "-------------------------------------------------------------"
-    echo "La ID de la tabla de enrutamiento es : " $RT_ID
+    echo "• La ID de la tabla de enrutamiento es : " $RT_ID
 
 #################################################
 ####                                         ####
@@ -172,8 +172,8 @@ clear
     ###     IMPRESIÓN DEL ID     ###
     ################################
     echo "-------------------------------------------------------------"
-    echo "La ID de el grupo de seguridad es :" $SG_ID
-    echo "El ARN de el grupo de seguridad es :" $SG_ID_ARN
+    echo "• La ID de el grupo de seguridad es :" $SG_ID
+    echo "• El ARN de el grupo de seguridad es :" $SG_ID_ARN
 
 #############################################
 ####                                     ####
@@ -200,7 +200,7 @@ clear
     ###     IMPRESIÓN DEL ID     ###
     ################################
     echo "-------------------------------------------------------------"
-    echo "La ID de la instancia es :" $EC2_ID
+    echo "• La ID de la instancia es :" $EC2_ID
 
     ####################################################################
     ##      ASIGNACIÓN POSTERIOR - GRUPO DE SEGURIDAD (OPCIONAL)      ##
