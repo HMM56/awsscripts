@@ -196,6 +196,13 @@ clear
         --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=Hector-Instance}]' \
         --query 'Instances[*].InstanceId' --output text)
 
+    ########################################################
+    ###     ESPERAMOS HASTA QUE SE CREE LA INSTANCIA     ###
+    ########################################################
+    aws ec2 wait instance-running \
+        --instance-ids $EC2_ID
+            # Con este comando le indicamos que esperemos hasta que la instancia se cree.
+
     ################################
     ###     IMPRESIÓN DEL ID     ###
     ################################
